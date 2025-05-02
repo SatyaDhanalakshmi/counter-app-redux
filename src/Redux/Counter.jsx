@@ -1,14 +1,14 @@
 import React from  'react';
 import {useSelector,useDispatch} from 'react-redux';
 
-import {increment,decrement} from './actions.jsx';
+import {increment,decrement,reset} from './actions.jsx';
 
 function Counter(){
     
     const dispatch=useDispatch();
     const select=useSelector((state)=>state.count)
     return(
-        <div className='d-flex justify-content-center align-items-center" style="height: 100vh; bg-info text-white  height: 100vh;' >
+        <div className='d-flex justify-content-center align-items-center  bg-info text-white  height: 100vh; ' >
           <div className="text-center" >
           <div className='col-2'>
            <button className='btn btn-primary ' 
@@ -24,7 +24,7 @@ function Counter(){
           
 
            <div className='col-2 '>
-           <button className='btn btn-danger '
+           <button className='btn btn-warning'
              onClick={()=>{
                 dispatch(decrement(1));
              }}
@@ -32,6 +32,15 @@ function Counter(){
                 Decrement
             </button>
            </div>
+          </div>
+          <div>
+            <button className='btn btn-danger'
+            onClick={()=>{
+                dispatch(reset())
+            }}
+            >
+                Reset
+            </button>
           </div>
         </div>
 

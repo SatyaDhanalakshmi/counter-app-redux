@@ -6,3 +6,6 @@ export function increment(payload){
 export  function decrement(payload){
     return({type:'decrement',payload})
 }
+export function reset(){
+    return({type:'reset'})
+}
